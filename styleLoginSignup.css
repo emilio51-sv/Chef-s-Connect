@@ -5,7 +5,19 @@ body {
   background-color: white;
   color: black;
 }
+footer {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
 
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
 header {
   font-family:'Century Gothic', sans-serif;
   background-color: orange;
@@ -159,16 +171,3 @@ header {
   background-color: #e69500;
 }
 
-/* Footer */
-footer {
-  background-color: orange;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-footer a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
