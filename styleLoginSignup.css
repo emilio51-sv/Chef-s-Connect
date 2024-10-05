@@ -159,3 +159,16 @@ header {
   background-color: #e69500;
 }
 
+/* Footer */
+footer {
+  background-color: orange;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
