@@ -1,0 +1,183 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+/* Header & Navbar */
+header {
+  font-family: 'Century Gothic', sans-serif;
+  background-color: orange;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  /* Centralizza la barra di ricerca */
+  align-items: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  /* Garantisce che gli elementi restino su una riga */
+}
+
+/* Title larger and centered with search bar */
+.navbar .title {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 48px;
+  /* Titolo grande */
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+  /* Margine per separare il titolo dalla barra di ricerca */
+}
+
+.navbar .search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .search-bar input {
+  width: 60%;
+  /* Larghezza aumentata per la barra di ricerca */
+  padding: 10px;
+  /* Leggermente più alto */
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 25px;
+  /* Bordo arrotondato */
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+  /* Effetto ombra */
+}
+
+.navbar .search-bar input:focus {
+  box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+  /* Maggiore ombra al focus */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 10px 0;
+}
+
+.nav-links ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  margin: 0 20px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: orange;
+  font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('https://redacademy.it/wp-content/uploads/2021/03/chef-de-partie-mansioni.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.hero .buttons {
+  margin-top: 20px;
+}
+
+.hero .buttons button {
+  background-color: orange;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Recent Announcements */
+.recent-announcements {
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.recent-announcements h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: orange;
+}
+
+.announcements-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.announcement {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid orange;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+}
+
+.announcement img {
+  width: 100%;
+  height: 250px;
+  /* Imposta una dimensione fissa per tutte le immagini */
+  object-fit: cover;
+  /* Taglia l'immagine in base alla dimensione */
+  border-radius: 5px;
+}
+.close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+}
+
+/* Footer */
+footer {
+  background-color: orange;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}

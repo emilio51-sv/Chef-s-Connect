@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Connect - Partners</title>
+    <link rel="stylesheet" href="styleIndex.css">
+
+    <style>
+        /* Applica Century Gothic ai titoli */
+        h1, h2, h3 {
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        /* Migliora la centratura del titolo "Our Partners" */
+        .partners-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Dimensione maggiore per il titolo "Our Partners" */
+        .partners-section h1 {
+            font-size: 48px;
+        }
+
+        /* Stile per la frase "We are proud..." e spostata leggermente più in alto */
+        .partners-section p {
+            font-size: 20px;
+            margin-top: -10px;
+        }
+
+        /* Griglia dei partner con 4 colonne */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            width: 100%; /* Imposta la larghezza della griglia */
+        }
+
+        .partner {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid orange;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Aggiungi una transizione per l'effetto hover */
+        }
+
+        /* Effetto hover sui box partner */
+        .partner:hover {
+            transform: scale(1.1); /* Ingrandisce il box del 10% */
+            background-color: #ffebcc; /* Cambia il colore di sfondo durante l'hover */
+        }
+
+        /* Stile per il titolo "Become a Partner" */
+        .partner-cta h2 {
+            font-size: 48px;
+            text-align: center;
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        /* Stile per la frase "If you are interested..." */
+        .partner-cta p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr); /* Due colonne su dispositivi più piccoli */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partners-grid {
+                grid-template-columns: 1fr; /* Una colonna su dispositivi molto piccoli */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="title">Chef's Connect</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for partners...">
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="JobPosting.html">Job Posting</a></li>
+                <li><a href="CommunityForum.html">Community Forum</a></li>
+                <li><a href="Partners.html">Partners</a></li>
+                <li><a href="LoginSignUp.html">Login/Sign-Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <h1>Our Partners</h1>
+        <p>We are proud to collaborate with industry leaders and innovators in the culinary world</p>
+
+        <!-- Grid of Partner Logos in two rows -->
+        <div class="partners-grid">
+            <!-- First row of partners -->
+            <div class="partner">Culina Tech</div>
+            <div class="partner">GreenHarvest</div>
+            <div class="partner">AquaGusto</div>
+            <div class="partner">FlameCraft</div>
+
+            <!-- Second row of partners -->
+            <div class="partner">Chef Heaven</div>
+            <div class="partner">Essenza</div>
+            <div class="partner">Terra Deliziosa</div>
+            <div class="partner">Mastropan</div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="partner-cta">
+        <h2>Become a Partner</h2>
+        <p>If you are interested in partnering with Chef's Connect, please <a href="Contact">join us</a> to discuss collaboration opportunities.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+</body>
+</html>

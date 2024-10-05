@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Postings - Chef's Connect</title>
+    <link rel="stylesheet" href="styleJob.css"> <!-- Collega il tuo styleJob.css -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="title">Chef's Connect</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for job postings or chefs...">
+            </div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="JobPosting.html">Job Posting</a></li>
+                <li><a href="CommunityForum.html">Community Forum</a></li>
+                <li><a href="Partners.html">Partners</a></li>
+                <li><a href="LoginSignUp.html">Login/Sign-Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <h2>Filter Job Postings</h2>
+        <label for="location">Location:</label>
+        <select id="location">
+            <option value="all">All Locations</option>
+            <option value="rome">Rome</option>
+            <option value="milan">Milan</option>
+            <option value="florence">Florence</option>
+        </select>
+
+        <label for="type">Job Type:</label>
+        <select id="type">
+            <option value="all">All Types</option>
+            <option value="full-time">Full-Time</option>
+            <option value="part-time">Part-Time</option>
+            <option value="freelance">Freelance</option>
+        </select>
+
+        <button id="filter-button">Apply Filters</button> <!-- Aggiunta dell'evento di clic -->
+    </section>
+
+    <!-- Job Postings Section -->
+    <main>
+        <h1>Job Postings</h1>
+        <div class="job-container">
+            <div class="job-list" id="job-list">
+                <!-- Esempi di offerte di lavoro con spazio per logo -->
+                <div class="job-card" data-location="rome" data-type="full-time">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 1" class="job-logo">
+                    <h3>Chef Marco</h3>
+                    <p>Location: Rome</p>
+                    <p>Type: Full-Time</p>
+                    <button onclick="showJobDescription('job1')">View Details</button>
+                    <button onclick="applyJob('job1')">Submit Application</button>
+                </div>
+                <div class="job-card" data-location="milan" data-type="part-time">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 2" class="job-logo">
+                    <h3>Chef Alessandro</h3>
+                    <p>Location: Milan</p>
+                    <p>Type: Part-Time</p>
+                    <button onclick="showJobDescription('job2')">View Details</button>
+                    <button onclick="applyJob('job2')">Submit Application</button>
+                </div>
+                <div class="job-card" data-location="florence" data-type="freelance">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 3" class="job-logo">
+                    <h3>Chef Matteo</h3>
+                    <p>Location: Florence</p>
+                    <p>Type: Freelance</p>
+                    <button onclick="showJobDescription('job3')">View Details</button>
+                    <button onclick="applyJob('job3')">Submit Application</button>
+                </div>
+                <div class="job-card" data-location="rome" data-type="full-time">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 4" class="job-logo">
+                    <h3>Chef Sofia</h3>
+                    <p>Location: Rome</p>
+                    <p>Type: Full-Time</p>
+                    <button onclick="showJobDescription('job4')">View Details</button>
+                    <button onclick="applyJob('job4')">Submit Application</button>
+                </div>
+                <div class="job-card" data-location="milan" data-type="freelance">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 5" class="job-logo">
+                    <h3>Chef Luca</h3>
+                    <p>Location: Milan</p>
+                    <p>Type: Freelance</p>
+                    <button onclick="showJobDescription('job5')">View Details</button>
+                    <button onclick="applyJob('job5')">Submit Application</button>
+                </div>
+                <div class="job-card" data-location="florence" data-type="part-time">
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png" alt="Logo Azienda 6" class="job-logo">
+                    <h3>Chef Isabella</h3>
+                    <p>Location: Florence</p>
+                    <p>Type: Part-Time</p>
+                    <button onclick="showJobDescription('job6')">View Details</button>
+                    <button onclick="applyJob('job6')">Submit Application</button>
+                </div>
+            </div>
+
+            <!-- Sezione per mostrare i dettagli del lavoro -->
+            <div id="jobDescription" style="display:none;">
+                <div id="descriptionContent"></div>
+                <button onclick="closeJobDescription()">Close</button>
+            </div>
+        </div>
+
+        <div id="post-job-container" style="margin-top: 20px;">
+            <button id="post-job-button" style="display:none;">Post a Job</button> <!-- Mostra solo se utente ristoratore -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <!-- Collegamento allo script JavaScript -->
+    <script src="jobPostingFilter.js"></script> <!-- Includi il tuo script JavaScript -->
+</body>
+</html>

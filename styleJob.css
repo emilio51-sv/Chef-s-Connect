@@ -1,0 +1,294 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+/* Header & Navbar */
+header {
+    font-family: 'Century Gothic', sans-serif;
+    background-color: orange;
+    padding: 10px 0;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    margin: 0; /* Remove margins */
+    
+}
+
+.navbar .title {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
+}
+
+.navbar .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .search-bar input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 25px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+.navbar .search-bar input:focus {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 10px 0;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin: 0 20px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: orange;
+    font-size: 18px;
+}
+
+/* Filters Section */
+.filters {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.filters h2 {
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.filters label,
+.filters select {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: black;
+    outline: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDQiPjxwYXRoIGZpbGw9IiMwMDAiIGQ9Ik00IDBsNCA0SDAsIi8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px;
+    transition: all 0.3s ease;
+}
+
+.filters select:hover {
+    border-color: darkorange;
+}
+
+.filters button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: darkorange;
+}
+
+/* Job Postings Section */
+main {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Griglia per i job postings simile a tabella */
+.job-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola colonna */
+    gap: 200px; /* Aumentato lo spazio tra i post a 200px */
+    margin-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Stile per job-card simile a righe di una tabella */
+.job-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6 colonne per allineare gli elementi */
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px; /* Aggiunto margine inferiore per ulteriore spazio tra le card */
+    transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Immagine, nome, location, tipo, pulsanti sono allineati a destra */
+.job-card img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    grid-column: 1; /* Prima colonna per l'immagine */
+}
+
+.job-card .job-details {
+    grid-column: 2; /* Seconda colonna per i dettagli */
+    text-align: right;
+}
+
+.job-card .location {
+    grid-column: 3; /* Terza colonna per la location */
+    text-align: right;
+}
+
+.job-card .job-type {
+    grid-column: 4; /* Quarta colonna per il tipo di lavoro */
+    text-align: right;
+}
+
+.job-card .view-button {
+    grid-column: 5; /* Quinta colonna per il pulsante View Details */
+    text-align: right;
+}
+
+.job-card .submit-button {
+    grid-column: 6; /* Sesta colonna per il pulsante Submit Application */
+    text-align: right;
+}
+
+/* Stile per i pulsanti all'interno della job-card */
+.job-card button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.job-card button:hover {
+    background-color: darkorange;
+}
+
+/* Popup per Job Description */
+#jobDescription {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#jobDescription button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#jobDescription button:hover {
+    background-color: darkred;
+}
+
+/* Footer */
+footer {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .navbar .search-bar input {
+        width: 80%;
+    }
+
+    .job-card {
+        grid-template-columns: 1fr; /* Layout verticale per schermi piccoli */
+    }
+
+    .job-card img {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .job-container {
+        grid-template-columns: 1fr;
+    }
+}
+

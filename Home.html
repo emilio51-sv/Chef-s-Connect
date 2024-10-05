@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef's Connect</title>
+    <link rel="stylesheet" href="styleIndex.css" />
+    <link rel="stylesheet" href="styleUploadButton.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <!-- Title on the left -->
+            <div class="title">Chef's Connect</div>
+
+            <!-- Search Bar in the center -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for job postings or chefs..." />
+            </div>
+        </div>
+
+        <!-- Navigation Links below the navbar -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="JobPosting.html">Job Posting</a></li>
+                <li><a href="CommunityForum.html">Community Forum</a></li>
+                <li><a href="Partners.html">Partners</a></li>
+                <li><a href="LoginSignUp.html">Login/Sign-Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Connecting Chefs and Aspiring Chefs on One Platform</h1>
+        <div class="buttons">
+            <button onclick="toggleForm('post-job-form', 'upload-cv-form')">Post a Job</button>
+            <button onclick="toggleForm('upload-cv-form', 'post-job-form')">Upload Your CV</button>
+        </div>
+    </div>
+
+    <!-- Job Posting Form -->
+    <div id="post-job-form" style="display:none;">
+        <form id="job-form">
+            <button type="button" onclick="closeForm('post-job-form')" class="close-btn">X</button>
+            <label for="restaurant-name">Restaurant Name:</label>
+            <input type="text" id="restaurant-name" name="restaurant-name" required>
+
+            <label for="restaurant-type">Restaurant Type:</label>
+            <input type="text" id="restaurant-type" name="restaurant-type" required>
+
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" required>
+
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" required>
+
+            <label for="requirements">Requirements:</label>
+            <textarea id="requirements" name="requirements" required></textarea>
+
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" name="job-description" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- CV Upload Form -->
+    <div id="upload-cv-form" style="display:none;">
+        <form id="cv-form" enctype="multipart/form-data">
+            <button type="button" onclick="closeForm('upload-cv-form')" class="close-btn">X</button>
+            <label for="cv-file">Upload your CV (PDF only):</label>
+            <input type="file" id="cv-file" name="cv-file" accept="application/pdf" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Recent Announcements Section -->
+    <section class="recent-announcements">
+        <h2>Recent Job Postings</h2>
+        <div class="announcements-list">
+            <div class="announcement">
+                <img src="https://www.finedininglovers.it/sites/g/files/xknfdk1106/files/styles/article_1200_800_fallback/public/2020-11/Chef%20Andrea%20Antonini%20-%20IMAGO%20%281%29.jpg" alt="Job Posting Marco" />
+                <h3>Chef Marco</h3>
+                <p>Location: Rome</p>
+            </div>
+            <div class="announcement">
+                <img src="https://reportergourmet.com/upload/news/6506/d_copertina-chef-privato-Brian-Arruda.jpg" alt="Job Posting Alessandro" />
+                <h3>Chef Alessandro</h3>
+                <p>Location: Milan</p>
+            </div>
+            <div class="announcement">
+                <img src="https://www.cibotoday.it/~media/horizontal-hi/14969956571128/storia-di-enrico-bartolini-lo-chef-imprenditore-toscano-che-ha-il-record-di-stelle.jpg" alt="Job Posting Matteo" />
+                <h3>Chef Matteo</h3>
+                <p>Location: Florence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script src="HomeButtons.js"></script>
+</body>
+</html>

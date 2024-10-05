@@ -1,0 +1,85 @@
+#post-job-form {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#post-job-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-job-form label {
+    margin-bottom: 5px;
+    color: orange;
+}
+
+#post-job-form input,
+#post-job-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none; /* Prevent resizing */
+}
+
+#post-job-form button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    align-self: center;
+}
+
+#post-job-form button:hover {
+    background-color: #e69500;
+}
+
+#upload-cv-form {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#upload-cv-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#upload-cv-form label {
+    margin-bottom: 10px;
+    color: orange;
+}
+
+#upload-cv-form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+#upload-cv-form button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#upload-cv-form button:hover {
+    background-color: #e69500;
+}
+

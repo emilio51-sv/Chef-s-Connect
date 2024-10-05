@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Connect - Community Forum</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+        /* Header & Navbar */
+        header {
+            font-family: 'Century Gothic', sans-serif;
+            background-color: orange;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .navbar .title {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin-right: 20px;
+        }
+
+        .navbar .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar .search-bar input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid white;
+            border-radius: 25px;
+            outline: none;
+            transition: box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+        }
+
+        .navbar .search-bar input:focus {
+            box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin: 0 20px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: orange;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://www.example.com/community-forum-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            margin-bottom: 0;
+            margin-top: -10px;
+        }
+
+        .hero h1 {
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 48px;
+            margin-bottom: 55px;
+        }
+
+        .hero .buttons {
+            margin-top: 5px;
+        }
+
+        .hero .buttons button {
+            background-color: orange;
+            color: white;
+            padding: 30px 55px;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .buttons button:hover {
+            background-color: darkorange;
+        }
+
+        /* Forum Categories */
+        .forum-categories {
+            padding: 20px 50px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .forum-categories h2 {
+            font-size: 28px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .categories-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Recent Discussions */
+        .recent-discussions {
+            padding: 30px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .recent-discussions h2 {
+            font-size: 28px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .discussions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .discussion {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .discussion:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .discussion h3 {
+            font-size: 20px;
+            color: black;
+        }
+
+        .discussion p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: orange;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto; /* Centered */
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%; /* Adjusted for better fit */
+            box-sizing: border-box;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid orange;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif; /* Imposta il font Gothic C */
+        }
+
+        .modal-content textarea {
+            resize: none; /* Fissa la dimensione */
+            height: 150px; /* Altezza fissa */
+        }
+
+        .modal-content input::placeholder,
+        .modal-content textarea::placeholder {
+            color: #999;
+            font-style: italic;
+            font-family: 'Century Gothic', sans-serif; /* Font per il placeholder */
+        }
+
+        .modal-content button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .modal-content button:hover {
+            background-color: darkorange;
+        }
+
+        .close {
+            color: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="title">Chef's Connect</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for partners...">
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="JobPosting.html">Job Posting</a></li>
+                <li><a href="CommunityForum.html">Community Forum</a></li>
+                <li><a href="Partners.html">Partners</a></li>
+                <li><a href="LoginSignUp.html">Login/Sign-Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Chef Community Forum</h1> 
+        <div class="buttons">
+            <button id="openModalBtn">Create New Topic</button>
+        </div>
+    </div>
+
+    <!-- Forum Categories Section -->
+    <section class="forum-categories">
+        <h2>Forum Categories</h2>
+        <div class="categories-list">
+            <div class="category-card">
+                <h3>Recipes & Techniques</h3>
+                <p>Discuss your favorite recipes and learn new techniques from fellow chefs.</p>
+            </div>
+            <div class="category-card">
+                <h3>Chef Career</h3>
+                <p>Talk about your career as a chef, share advice, and find new opportunities.</p>
+            </div>
+            <div class="category-card">
+                <h3>Kitchen Tools & Equipment</h3>
+                <p>Get advice on the best kitchen tools and equipment for professional chefs.</p>
+            </div>
+            <div class="category-card">
+                <h3>Nutrition & Sustainability</h3>
+                <p>Learn about sustainable cooking and nutrition tips to improve your dishes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Discussions Section -->
+    <section class="recent-discussions">
+        <h2>Recent Discussions</h2>
+        <div class="discussions-list">
+            <div class="discussion">
+                <h3>How to Cook the Perfect Risotto?</h3>
+                <p>Posted by Chef Andrea - 10 replies - 1 hour ago</p>
+            </div>
+            <div class="discussion">
+                <h3>Best Tools for Precision Cooking</h3>
+                <p>Posted by Chef Marco - 15 replies - 2 hours ago</p>
+            </div>
+            <div class="discussion">
+                <h3>Vegan Dishes with a Gourmet Touch</h3>
+                <p>Posted by Chef Maria - 8 replies - 3 hours ago</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for creating new topic -->
+    <div id="createTopicModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Create New Topic</h2>
+            <form>
+                <label for="topic-title">Topic Title:</label>
+                <input type="text" id="topic-title" placeholder="Enter topic title">
+
+                <label for="topic-content">Content:</label>
+                <textarea id="topic-content" placeholder="Enter topic content"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script>
+        // Get the modal and button elements
+        var modal = document.getElementById("createTopicModal");
+        var openModalBtn = document.getElementById("openModalBtn");
+        var closeModalBtn = document.getElementById("closeModalBtn");
+
+        // When the user clicks the button, open the modal
+        openModalBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
